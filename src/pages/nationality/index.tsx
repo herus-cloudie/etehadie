@@ -3,7 +3,6 @@ import { useState, ReactNode, useEffect } from 'react'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
 import Box, { BoxProps } from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { styled, useTheme } from '@mui/material/styles'
@@ -19,7 +18,6 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 import { useRouter } from 'next/router'
-import { Autocomplete } from '@mui/material'
 import { IdentTypeWithJwt } from 'src/context/types'
 import parseCookieString from 'src/utils/parseCookieString'
 import ParseJwt from 'src/utils/ParseJwt'
@@ -77,10 +75,8 @@ const LoginPage = () => {
 
   const { skin } = settings;
 
-  const [nationality, setNationality] = useState<'ایران' | 'اتباع'>('ایران')
   const [userData, setUserData] = useState<IdentTypeWithJwt | null>(null)
   const [loading, setLoading] = useState(true);
-  const [signMethod, showSignMethod] = useState(false);
 
   useEffect(() => {
     const fillJwt = async () => {
